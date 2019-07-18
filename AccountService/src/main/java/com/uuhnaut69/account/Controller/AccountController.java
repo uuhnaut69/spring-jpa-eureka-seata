@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.uuhnaut69.account.Service.AccountService;
 
 @RestController
-public  class  AccountController {
+public class AccountController {
 
-    @Autowired
-    private AccountService accountService;
+	@Autowired
+	private AccountService accountService;
 
-    @RequestMapping("/debit")
-    public Boolean debit(String userId, BigDecimal money) {
-        accountService.debit(userId, money);
+	@RequestMapping("/debit")
+	public Boolean debit(String userId, BigDecimal money) {
+		accountService.debit(userId, money);
 
-        return true;
-    }
+		return true;
+	}
 }
