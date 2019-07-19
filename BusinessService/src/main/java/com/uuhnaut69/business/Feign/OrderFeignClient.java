@@ -4,9 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.uuhnaut69.business.Feign.FallbackFactory.OrderClientFallbackFacktory;
-
-@FeignClient(name = "order-service", fallback = OrderClientFallbackFacktory.class)
+@FeignClient(name = "order-service", fallback = OrderFallbackService.class)
 public interface OrderFeignClient {
 
 	@GetMapping("/create")
