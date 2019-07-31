@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.uuhnaut69.order.Entity.Order;
 import com.uuhnaut69.order.Feign.AccountFeignClient;
-import com.uuhnaut69.order.Repository.OrderDAO;
+import com.uuhnaut69.order.Repository.OrderRepository;
 
 @Service
 public class OrderService {
@@ -17,7 +17,7 @@ public class OrderService {
 	private AccountFeignClient accountFeignClient;
 
 	@Autowired
-	private OrderDAO orderDAO;
+	private OrderRepository orderRepository;
 
 	@Transactional
 	public void create(String userId, String commodityCode, Integer count) {
@@ -30,7 +30,7 @@ public class OrderService {
 		order.setCount(count);
 		order.setMoney(orderMoney);
 
-		orderDAO.save(order);
+		orderRepository.save(order);
 
 		accountFeignClient.debit(userId, orderMoney);
 
