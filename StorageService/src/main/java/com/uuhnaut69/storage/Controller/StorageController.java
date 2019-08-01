@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.uuhnaut69.storage.Service.StorageService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class StorageController {
 
 	@Autowired
@@ -14,6 +17,7 @@ public class StorageController {
 
 	@GetMapping(path = "/deduct")
 	public Boolean deduct(String commodityCode, Integer count) {
+		log.info("Storage Service deduct");
 		storageService.deduct(commodityCode, count);
 		return true;
 	}
