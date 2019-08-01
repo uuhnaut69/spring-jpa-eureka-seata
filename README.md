@@ -32,3 +32,8 @@ type = "eureka"
 
 ```
 4. Seata server config files must config as the same.
+
+5. Run Zipkin server via Docker
+```
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
