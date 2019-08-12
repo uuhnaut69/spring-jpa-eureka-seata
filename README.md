@@ -1,7 +1,7 @@
 # springcloud-eureka-seata-hystrix
 Test Integrate spring cloud eureka server with seata and circuitbreaker hystrix
 
-![Alt text](https://github.com/uuhnaut69/springcloud-eureka-seata-hystrix/blob/master/Untitled%20Diagram.png?raw=true "Flow")
+![Alt text](https://github.com/uuhnaut69/spring-jpa-eureka-seata/blob/master/diagram.png?raw=true "Flow")
 
 
 
